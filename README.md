@@ -1,4 +1,4 @@
-# ohw24_extract_cube_data_overlap_poly_au
+# ohw24_proj_extract_cube_data_overlap_poly_au
 
 ## Project Name
 Extracting data using overlapping polygons from a data cube using Python
