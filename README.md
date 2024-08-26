@@ -9,6 +9,8 @@ How can we make extracting data from a publicly available zarr file using hundre
 ## Collaborators
 Anyone is welcome to sign up.
 
+Tormey's here!
+
 ## Background
 The [Data Management System (DMS) for the Great Barrier Reef (GBR)](https://imos.org.au/data/access-ocean-data/great-barrier-reef-data-management-system) has a wide collection of publicly available datasets describing various aspects of the GBR. The DMS aims to be a “one stop shop” where researchers and policy makers can access data about the physical, ecological, and social components of the GBR.  
   
