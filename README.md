@@ -7,9 +7,9 @@ Extracting data using overlapping polygons from a data cube using Python
 How can we make extracting data from a publicly available zarr file using hundreds of overlapping polygons?
 
 ## Collaborators
-Anyone is welcome to sign up.
-
-Tormey's here!
+- [Clement Astruc Delor](https://github.com/clemasde)  
+- [Bryan Hally](https://github.com/janomecopter)  
+- [Denisse Fierro Arcos](https://github.com/lidefi87)  
 
 ## Background
 The [Data Management System (DMS) for the Great Barrier Reef (GBR)](https://imos.org.au/data/access-ocean-data/great-barrier-reef-data-management-system) has a wide collection of publicly available datasets describing various aspects of the GBR. The DMS aims to be a “one stop shop” where researchers and policy makers can access data about the physical, ecological, and social components of the GBR.  
@@ -26,7 +26,11 @@ We can use any dataset to improve this workflow, but the three datasets below ar
 - GBRMPA - Complete GBR Features: s3://gbr-dms-data-public/gbrmpa-complete-gbr-features/data.parquet  
 
 ## Workflow/Roadmap
-Scripts with current solution will be shared closer to the start of the hackathon.
+1. **Load the GBRMPA shapefile and dissolve all polygons into one.** 
+2. **Load the gridded dataset and use the dissolved GBRMPA shapefile to extract data where polygons are present.** This step reduces the size of the gridded dataset used in the data extraction at a reef level.  
+3. **Rechunk cropped dataset.** Chunk size of the dataset was changed to maximise use of resources when cropping data for each reef in the GBRMPA polygon. However, rechunking works best when the rechunked data is saved to disk and loaded into memory.  
+4. **Extract data at a reef level using the cropped and rechunk gridded dataset.**  
+5. **Save extracted data for each reef as a csv file.** We should note that this step takes a long time if the rechunked data is not saved to disk.  
 
 ## References
 - E. Lawrey, M. Stewart, "Mapping the Torres Strait Reef and Island Features: Extending the GBR Features (GBRMPA) dataset,"  (Report to the National Environmental Science Programme, Cairns, 2016).  
